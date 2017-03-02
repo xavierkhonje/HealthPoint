@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="613.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.PharmacyController.DrugSettingsController">
+   <children>
+      <AnchorPane prefHeight="123.0" prefWidth="946.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="33.0" layoutY="52.0" text="Item Code :" />
+            <Label layoutX="33.0" layoutY="80.0" text="Minimum Level :" />
+            <Label layoutX="487.0" layoutY="50.0" text="Maximum Level :" />
+            <Label layoutX="488.0" layoutY="78.0" text="Expiry Warning :" />
+            <ComboBox fx:id="cbItemCode" layoutX="128.0" layoutY="48.0" prefHeight="25.0" prefWidth="177.0" promptText="Select Item Code" />
+            <TextField fx:id="txtMinmumLevel" layoutX="128.0" layoutY="76.0" prefHeight="25.0" prefWidth="177.0" promptText="Enter Min Level Warning" />
+            <TextField fx:id="txtMaxLevel" layoutX="578.0" layoutY="46.0" prefHeight="25.0" prefWidth="177.0" promptText="Enter Max Level Warning" />
+            <TextField fx:id="txtEWP" layoutX="578.0" layoutY="74.0" prefHeight="25.0" prefWidth="177.0" promptText="Enter Warning Period (Days)" />
+            <Button layoutX="32.0" layoutY="122.0" mnemonicParsing="false" onAction="#SaveConfiguration" prefHeight="25.0" prefWidth="177.0" text="Save Configuration" />
+            <Separator layoutY="118.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Separator layoutY="150.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Label fx:id="lblcmscodeError" layoutX="314.0" layoutY="52.0" text="*" textFill="#f80707" />
+            <Label fx:id="lblminimumlevelError" layoutX="314.0" layoutY="80.0" text="*" textFill="#f80707" />
+            <Label fx:id="lblMaximumLevelError" layoutX="761.0" layoutY="50.0" text="*" textFill="#f80707" />
+            <Label fx:id="lblEWarningError" layoutX="761.0" layoutY="78.0" text="*" textFill="#f80707" />
+            <Label fx:id="lblGeneralMessage" layoutX="416.0" layoutY="126.0" prefHeight="17.0" prefWidth="339.0" />
+            <Button fx:id="UpdateDrug" layoutX="217.0" layoutY="122.0" mnemonicParsing="false" onAction="#UpdateDrugConf" text="Update" />
+            <Button fx:id="SearchDrug" layoutX="356.0" layoutY="122.0" mnemonicParsing="false" onAction="#SearchConf" text="Search" />
+            <Button fx:id="RemoveDrug" layoutX="285.0" layoutY="122.0" mnemonicParsing="false" onAction="#RemoveDrugConf" text="Remove" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="TVItemConfig" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="453.0" prefWidth="946.0" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>

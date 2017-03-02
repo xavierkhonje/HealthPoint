@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="MainWindowPane" fx:id="MainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.PharmacyController.PharmacyMainController">
+    <stylesheets>
+        <URL value="@/Resources/patientmain.css" />
+    </stylesheets>
+   <left>
+      <Accordion id="Accordion" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+        <panes>
+          <TitledPane id="Accordion" animated="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="My Shortcuts">
+               <content>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                     <children>
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#GoHome" text="Home" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin></Button>
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ShowDrugSettings" text="Settings" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin></Button>
+                        <Separator maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <Button fx:id="btnDrugsEntry" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ShowDrugsEntry" styleClass="AccordionButtons" text="Drugs Entry" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btnSundriesEntry" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ShowSundriesEntry" text="Sundries Entry" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin></Button>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Separator>
+                     </children>
+                  </VBox>
+               </content>
+          </TitledPane>
+          <TitledPane id="Accordion" animated="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Pharmacy Reports">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="4.0" layoutY="14.0" mnemonicParsing="false" onAction="#InventoryReport" prefHeight="25.0" prefWidth="210.0" text="Inventory" />
+                        <Button layoutX="4.0" layoutY="42.0" mnemonicParsing="false" onAction="#InventoryByLocationReport" prefHeight="25.0" prefWidth="210.0" text="Inventory By Location" />
+                        <Button layoutX="4.0" layoutY="70.0" mnemonicParsing="false" onAction="#InventoryBySupplierReport" prefHeight="25.0" prefWidth="210.0" text="Inventory By Supplier" />
+                        <Button layoutX="4.0" layoutY="98.0" mnemonicParsing="false" onAction="#LevelStockReport" prefHeight="25.0" prefWidth="210.0" text="Stock Levels" />
+                        <Button layoutX="4.0" layoutY="126.0" mnemonicParsing="false" onAction="#BackOrderReport" prefHeight="25.0" prefWidth="207.0" text="Back Order" />
+                        <Button layoutX="4.0" layoutY="155.0" mnemonicParsing="false" onAction="#ConsumedReport" prefHeight="25.0" prefWidth="210.0" text="Consumed Report" />
+                        <Button layoutX="4.0" layoutY="184.0" mnemonicParsing="false" onAction="#IssuedHistoryReport" prefHeight="25.0" prefWidth="210.0" text="Issued History Report" />
+                        <Button layoutX="4.0" layoutY="212.0" mnemonicParsing="false" onAction="#ReceivedHistoryReport" prefHeight="25.0" prefWidth="210.0" text="Received History Report" />
+                        <Button layoutX="4.0" layoutY="241.0" mnemonicParsing="false" onAction="#LostHistoryReport" prefHeight="25.0" prefWidth="210.0" text="Lost History Report" />
+                        <Button layoutX="4.0" layoutY="269.0" mnemonicParsing="false" onAction="#DamageHistoryReport" prefHeight="25.0" prefWidth="210.0" text="Damage History Report" />
+                        <Button fx:id="btnOrdeFrequency" layoutX="4.0" layoutY="297.0" mnemonicParsing="false" onAction="#OrderFrequencySummaryReport" prefHeight="25.0" prefWidth="209.0" text="Order Frequency" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </left>
+   <top>
+      <HBox id="HBox" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar id="MnuMenu" HBox.hgrow="ALWAYS">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="mnuClose" mnemonicParsing="false" onAction="#LogOutHealthPoint" styleClass="MenuTitles" text="Close" />
+                        <MenuItem fx:id="mnuHome" mnemonicParsing="false" onAction="#GoHome" text="Home" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Pharmacy Items">
+                    <items>
+                        <MenuItem fx:id="mnudrugsentry" mnemonicParsing="false" onAction="#ShowDrugsEntry" text="Drug Entry" />
+                        <MenuItem fx:id="mnusundriesentry" mnemonicParsing="false" onAction="#ShowSundriesEntry" text="Sundry Entry" />
+                        <!--<MenuItem mnemonicParsing="false" text="Import Drug From CSV" />
+                        <MenuItem mnemonicParsing="false" text="Import Sundry From CSV" />-->
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Settings">
+                  <items>
+                    <!--<MenuItem mnemonicParsing="false" styleClass="MenuTitles" text="Suppliers" />
+                        <MenuItem mnemonicParsing="false" text="Preferences" />-->
+                        <MenuItem fx:id="mnusettings" mnemonicParsing="false" onAction="#ShowDrugSettings" text="Drug Settings" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Ward">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#NewWard" text="New Ward" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Pharmacy Reports">
+                    <items>
+                      <!--<MenuItem fx:id="mnuDrugSummary" mnemonicParsing="false" onAction="#ShowDrugSummary" text="Drug Summary Report" />
+                        <MenuItem mnemonicParsing="false" onAction="#ShowSundrySummaryReport" text="Sundry Summary Report" />-->
+                        <MenuItem fx:id="mnuSrugStockCard" mnemonicParsing="false" onAction="#ShowDrugStockCard" text="Drug Stock Card Report" />
+                        <MenuItem mnemonicParsing="false" onAction="#ShowSundryStockCard" text="Sundry Stock Card Report" />
+                        <!--<MenuItem fx:id="mnuDrugsLost" mnemonicParsing="false" onAction="#ShowDrugsLostReport" text="Drugs Lost Report" />
+                        <MenuItem fx:id="mnuSundriesLostReport" mnemonicParsing="false" onAction="#ShowSundriesLostReport" text="Sundries Lost Report" />
+                        <MenuItem mnemonicParsing="false" onAction="#ShowDrugsExpiryReport" text="Drugs Expiry Report" />
+                        <MenuItem fx:id="mnusundriesexpiry" mnemonicParsing="false" onAction="#ShowSundriesExpiryReport" text="Sundries Expiry Report" />-->
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="OPD">
+                    <items>
+                      <MenuItem fx:id="mnuOPD" mnemonicParsing="false" onAction="#OutPatientDepartment" text="Out Patient Department" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Item Orders">
+                    <items>
+                      <MenuItem fx:id="mnuMakeRequisition" mnemonicParsing="false" onAction="#ReviewRequisition" text="Pack Order" />
+                        <MenuItem fx:id="mnuApprove" mnemonicParsing="false" onAction="#ApproveRequisition" text="Approve  Order" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Central Medical Stores Database">
+                    <items>
+                      <MenuItem fx:id="mnuItemEntry" mnemonicParsing="false" onAction="#ItemEntry" styleClass="MenuTitles" text="Convert Drug" />
+                        <MenuItem mnemonicParsing="false" onAction="#SundryConversion" text="Convert Sundry" />
+                        <MenuItem mnemonicParsing="false" onAction="#ProcurementOrder" text="Procurement Order" />
+                    </items>
+                  </Menu>
+                  <!--<Menu mnemonicParsing="false" text="Tools">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="BackUp" />
+                        <MenuItem mnemonicParsing="false" text="Restore" />
+                    </items>
+                  </Menu>                  
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" styleClass="MenuTitles" text="About" />
+                  </items>
+                </Menu>-->
+              </menus>
+            </MenuBar>
+            <!-- <TextField id="SearchBox" promptText="SEARCH">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>-->
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="3.0" top="3.0" />
+         </padding>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="25.0" prefWidth="736.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblWelcomeText" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

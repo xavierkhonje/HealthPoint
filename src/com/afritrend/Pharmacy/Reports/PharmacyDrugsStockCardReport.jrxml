@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="733897e1-004f-4c19-a58e-3d65f3137a7c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="adjustedMinusAmount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[adjustedMinusAmount]]></fieldDescription>
+	</field>
+	<field name="adjustedPlusAmount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[adjustedPlusAmount]]></fieldDescription>
+	</field>
+	<field name="cmsCode" class="java.lang.String">
+		<fieldDescription><![CDATA[cmsCode]]></fieldDescription>
+	</field>
+	<field name="dosageForm" class="java.lang.String">
+		<fieldDescription><![CDATA[dosageForm]]></fieldDescription>
+	</field>
+	<field name="drugName" class="java.lang.String">
+		<fieldDescription><![CDATA[drugName]]></fieldDescription>
+	</field>
+	<field name="expiredAmount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[expiredAmount]]></fieldDescription>
+	</field>
+	<field name="issueAmount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[issueAmount]]></fieldDescription>
+	</field>
+	<field name="issueUnit" class="java.lang.String">
+		<fieldDescription><![CDATA[issueUnit]]></fieldDescription>
+	</field>
+	<field name="lostAmount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[lostAmount]]></fieldDescription>
+	</field>
+	<field name="receivedAmount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[receivedAmount]]></fieldDescription>
+	</field>
+	<field name="strength" class="java.lang.String">
+		<fieldDescription><![CDATA[strength]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="229" y="0" width="365" height="28" uuid="9787eee5-542e-443f-bb37-374039522eeb"/>
+				<textElement>
+					<font fontName="Calibri" size="17" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QECH PHARMACY - DRUGS STOCK CARD REPORT]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="0" width="58" height="20" uuid="2774b067-4808-41c5-8c9b-40d12429ddff"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CMS CODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="72" y="0" width="106" height="20" uuid="415ba449-bdb8-40b3-a343-151580a6f791"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DRUG NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="186" y="0" width="83" height="20" uuid="16b18522-511e-4039-8f95-2a55321c411e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DOSAGE FORM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="269" y="0" width="74" height="20" uuid="5f0892d2-5e59-4fe8-bcac-e2faceea3e3a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[STRENGTH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="0" width="50" height="20" uuid="aeb041bd-701f-4de1-8b9c-650bd3bd4b94"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECEIVED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="352" y="0" width="64" height="20" uuid="551e8d2c-14c7-4e92-ac31-b753b52c9c50"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISSUE UNIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="486" y="0" width="66" height="20" uuid="7b6ac33f-99c7-432f-b2f0-c4e6d494c904"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISSUED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="565" y="0" width="44" height="20" uuid="fcdf88b2-a7be-4c46-9b54-95c74b6c6272"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EXPIRED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="616" y="0" width="65" height="20" uuid="83e5b72d-687c-4558-82a4-666b1adbf166"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adjust Minus]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="684" y="0" width="71" height="20" uuid="7f03a0d1-aa87-4737-a040-b8664159ba01"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adjusted Plus]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="762" y="0" width="40" height="20" uuid="d6c9128b-d785-43a3-aec9-a5c8493dcd7a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[LOST]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="58" height="20" uuid="6acdef35-fe20-4590-bdec-f0604c4fc027"/>
+				<textFieldExpression><![CDATA[$F{cmsCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="65" y="0" width="106" height="20" uuid="3fa8c015-85b7-41b8-b8a1-a322684626bf"/>
+				<textFieldExpression><![CDATA[$F{drugName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="179" y="0" width="83" height="20" uuid="9926147c-9f6f-4479-9782-429500da9f1f"/>
+				<textFieldExpression><![CDATA[$F{dosageForm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="0" width="74" height="20" uuid="193136a7-a094-4e59-965a-0033d365fd6e"/>
+				<textFieldExpression><![CDATA[$F{strength}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="0" width="50" height="20" uuid="72568273-ad55-4047-98b7-1f6b3ef47ebb"/>
+				<textFieldExpression><![CDATA[$F{receivedAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="352" y="0" width="64" height="20" uuid="16a6bf61-5cfb-4158-8b4b-8b034e1a8729"/>
+				<textFieldExpression><![CDATA[$F{issueUnit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="486" y="0" width="66" height="20" uuid="4da54f76-5167-4b01-b0df-bd586a5a6300"/>
+				<textFieldExpression><![CDATA[$F{issueAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="565" y="0" width="44" height="20" uuid="1c29c01e-4d04-43f5-b5d1-9c40814263e0"/>
+				<textFieldExpression><![CDATA[$F{expiredAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="617" y="0" width="65" height="20" uuid="7d78fdb7-9328-4d99-a200-2c26e6b20f39"/>
+				<textFieldExpression><![CDATA[$F{adjustedMinusAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="684" y="0" width="71" height="20" uuid="e6cb94c0-6b61-47a1-b02b-f2b0d10541d6"/>
+				<textFieldExpression><![CDATA[$F{adjustedMinusAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="762" y="0" width="40" height="20" uuid="210c5015-a9ae-4323-999e-75d12955329d"/>
+				<textFieldExpression><![CDATA[$F{lostAmount}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="25" width="802" height="1" uuid="aeca755f-da33-45ec-aa9c-1ea1a5393a03"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="-4" width="802" height="1" uuid="d58335de-0fc2-437f-8541-40d1609bf7e3"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

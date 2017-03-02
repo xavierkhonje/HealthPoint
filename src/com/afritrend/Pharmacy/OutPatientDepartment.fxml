@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="566.0" minWidth="1035.0" prefHeight="566.0" prefWidth="1193.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.PharmacyController.OutPatientDepartmentController">
+   <children>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="1035.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="btnShowReport" layoutX="676.0" layoutY="35.0" mnemonicParsing="false" onAction="#ShowPatients" prefHeight="25.0" prefWidth="94.0" text="Search Patient" />
+            <DatePicker fx:id="dpFromDate" layoutX="186.0" layoutY="35.0" prefHeight="25.0" prefWidth="212.0" promptText="From Date" />
+            <DatePicker fx:id="dpToDate" layoutX="419.0" layoutY="35.0" prefHeight="25.0" prefWidth="243.0" promptText="To Date" />
+            <Label layoutX="17.0" layoutY="12.0" text="Patient Number">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="186.0" layoutY="11.0" text="Registration Date From:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnScanCode" layoutX="781.0" layoutY="35.0" mnemonicParsing="false" onAction="#ScanBarcode" text="Scan Code" />
+            <TextField fx:id="txtPatientNumber" layoutX="14.0" layoutY="35.0" promptText="Patient Number" />
+            <Label layoutX="419.0" layoutY="11.0" text="Registration Date To:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnPrintBagLabel" onAction="#PrintBagLabel"  layoutX="861.0" layoutY="35.0" mnemonicParsing="false" text="Print Pill Bag" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="TVShowPatient" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#ShowOPDPrescriptions" prefHeight="493.0" prefWidth="1035.0" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>

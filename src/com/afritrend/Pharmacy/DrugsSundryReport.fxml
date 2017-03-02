@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="566.0" minWidth="1035.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.PharmacyController.DrugsSundryReportController">
+   <children>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="1035.0" VBox.vgrow="ALWAYS">
+         <children>
+            <ComboBox layoutX="24.0" layoutY="29.0" prefHeight="25.0" prefWidth="218.0" promptText="Drug Name" />
+            <ComboBox layoutX="266.0" layoutY="29.0" prefHeight="25.0" prefWidth="229.0" promptText="Drug Code" />
+            <Button layoutX="939.0" layoutY="29.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Search" />
+            <DatePicker layoutX="524.0" layoutY="29.0" promptText="Start Date" />
+            <DatePicker layoutX="725.0" layoutY="29.0" promptText="Stop Date" />
+         </children>
+      </AnchorPane>
+      <TableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="493.0" prefWidth="1035.0" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>

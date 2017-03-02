@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="702.0" prefWidth="1178.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.PharmacyController.HospitalSundriesEntryController">
+   <children>
+      <AnchorPane prefHeight="122.0" prefWidth="1178.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="29.0" layoutY="19.0" text="Sundry Class :" />
+            <Label layoutX="29.0" layoutY="77.0" text="Sundry Name :" />
+            <Label layoutX="580.0" layoutY="20.0" text="Expiry Date :" />
+            <Label layoutX="580.0" layoutY="49.0" text="Quantity :" />
+            <Label layoutX="29.0" layoutY="102.0" text="Issue Unit :" />
+            <Label layoutX="29.0" layoutY="47.0" text="CMSCODE" />
+            <Label layoutX="580.0" layoutY="85.0" text="Transaction Type" />
+            <ComboBox fx:id="cbSundryClass" layoutX="149.0" layoutY="15.0" prefHeight="25.0" prefWidth="212.0" promptText="Select Sundry Class" />
+            <ComboBox fx:id="cbcmscodes" layoutX="149.0" layoutY="43.0" onAction="#GetCodeDetails" prefHeight="25.0" prefWidth="212.0" promptText="Select CMSCODE (Option)" />
+            <Button fx:id="btnSaveDrug" layoutX="677.0" layoutY="133.0" mnemonicParsing="false" onAction="#SaveSundry" text="Save Sundry" />
+            <Button layoutX="764.0" layoutY="133.0" mnemonicParsing="false" text="Update Sundry" />
+            <Separator layoutY="229.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <DatePicker fx:id="DpExpiryDate" layoutX="677.0" layoutY="16.0" prefHeight="25.0" prefWidth="212.0" promptText="Expiry Date" />
+            <TextField fx:id="txtQuantity" layoutX="677.0" layoutY="45.0" prefHeight="25.0" prefWidth="212.0" promptText="Quantity" />
+            <ComboBox fx:id="cbTransactionType" layoutX="678.0" layoutY="82.0" prefHeight="25.0" prefWidth="212.0" promptText="Select Transaction Type" />
+            <Label fx:id="lblGeneralError" layoutX="475.0" layoutY="205.0" prefHeight="17.0" prefWidth="418.0" />
+            <Label fx:id="cmscodeError" layoutX="382.0" layoutY="47.0" prefHeight="17.0" prefWidth="178.0" textFill="#dd0606" />
+            <Label fx:id="SundryClassError" layoutX="382.0" layoutY="19.0" prefHeight="17.0" prefWidth="178.0" textFill="#eb0d0d" />
+            <Label fx:id="SundryNameError" layoutX="382.0" layoutY="75.0" prefHeight="17.0" prefWidth="178.0" textFill="#da1111" />
+            <Label fx:id="TransactionTypeError" layoutX="899.0" layoutY="88.0" prefHeight="17.0" prefWidth="178.0" textFill="#e80a0a" />
+            <Label fx:id="IssueUnitError" layoutX="372.0" layoutY="102.0" prefHeight="17.0" prefWidth="199.0" textFill="#e40a0a" />
+            <Label fx:id="ExpiryDateError" layoutX="907.0" layoutY="22.0" prefHeight="17.0" prefWidth="199.0" textFill="#ee0909" />
+            <Label fx:id="QuantityError" layoutX="907.0" layoutY="52.0" prefHeight="17.0" prefWidth="199.0" textFill="#e80b0b" />
+            <Label layoutX="29.0" layoutY="129.0" text="Sundry Description" />
+            <TextArea fx:id="txtSundryDescription" layoutX="149.0" layoutY="126.0" prefHeight="79.0" prefWidth="212.0" />
+            <Label fx:id="txtDescriptionError" layoutX="382.0" layoutY="129.0" prefHeight="17.0" prefWidth="178.0" />
+            <TextField fx:id="txtSundrayName" layoutX="149.0" layoutY="71.0" prefHeight="25.0" prefWidth="212.0" />
+            <TextField fx:id="txtIssueUnit" layoutX="149.0" layoutY="98.0" prefHeight="25.0" prefWidth="212.0" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="TVSundryEntry" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="468.0" prefWidth="1178.0" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>

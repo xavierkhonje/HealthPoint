@@ -1,0 +1,117 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+#SearchBox
+{
+
+    -fx-text-fill: #FFF;
+    -fx-background-radius: 60;
+    -fx-border-width:0.8;
+    -fx-border-color:#FFF;  
+    -fx-border-radius: 60;
+    -fx-background-color: rgba(189, 202, 201, 0);
+}
+
+#MnuMenu
+{
+/*    -fx-text-fill: #e3e3e3;
+    -fx-background-color: #4d4d4d;    */
+}
+
+.MenuTitles
+{
+   /* -fx-text-fill: #e3e3e3;*/
+}
+
+#HBox
+{
+    /*-fx-background-color: #4d4d4d; 
+}
+
+#Accordion
+{
+ /*   -fx-background-color: #4d4d4d;
+    -fx-background-image:url('left_pane_Texture.png');
+    -fx-background-repeat: repeat-y;*/
+}
+
+#MainStage
+{
+        /*-fx-background-color: #282828;*/
+        /*-fx-background-image:url('MainBackground_Texture.png');*/
+/*        -fx-background-color: 
+        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
+        linear-gradient(#020b02, #3a3a3a),
+        linear-gradient(#9d9e9d 0%, #6b6a6b 20%, #343534 80%, #242424 100%),
+        linear-gradient(#8a8a8a 0%, #6b6a6b 20%, #343534 80%, #262626 100%),
+        linear-gradient(#777777 0%, #606060 50%, #505250 51%, #2a2b2a 100%);  */
+}
+
+#MainWindowPane
+{
+    
+}
+
+.Interfacelabel
+{
+    -fx-text-fill: #282828;
+    /*-fx-background-color: #282828;*/
+}
+
+.txtIntefaceTextField
+{
+/*    -fx-border-color:#FFF; 
+    -fx-text-fill: #282828;
+    -fx-border-radius: 5;*/
+    /*-fx-background-color: #282828;*/
+}
+
+.txtInterfaceTextArea
+{
+/*    -fx-border-color:#FFF;
+    -fx-text-fill: #FFF;
+    -fx-border-radius: 5;
+    -fx-background-color: #282828;*/
+}
+
+/*.cbInterfaceComboCox
+{
+    -fx-border-color:#FFF;
+    -fx-text-fill: #FFF;
+    -fx-border-radius: 5;
+    -fx-background-color: #282828;
+}*/
+
+/*.btnInterfaceButton
+{
+    -fx-background-color: 
+        rgba(0,0,0,0.08),
+        linear-gradient(#9a9a9a, #909090),
+        linear-gradient(white 0%, #f3f3f3 50%, #ececec 51%, #f2f2f2 100%);
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 5,5,4;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: #242d35;
+    -fx-font-size: 14px;
+}
+
+.btnInterfaceButton:hover
+{
+    -fx-background-color: 
+        rgba(0,0,0,0.1);
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 5,5,4;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: #242d35;
+    -fx-font-size: 14px;
+}*/
+
+.AccordionButtons
+{
+    
+}

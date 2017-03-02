@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="702.0" prefWidth="1178.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.WardController.WardItemEntryController">
+   <children>
+      <AnchorPane prefHeight="122.0" prefWidth="1178.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="29.0" layoutY="50.0" text="Drug Class :" />
+            <Label layoutX="29.0" layoutY="81.0" text="Dosage Form :" />
+            <Label layoutX="29.0" layoutY="107.0" text="Drug Name :" />
+            <Label layoutX="581.0" layoutY="17.0" text="Strength :" />
+            <Label layoutX="580.0" layoutY="79.0" text="Expiry Date :" />
+            <Label layoutX="580.0" layoutY="108.0" text="Quantity :" />
+            <Label layoutX="580.0" layoutY="48.0" text="Issue Unit :" />
+            <Label layoutX="29.0" layoutY="21.0" text="CMSCODE" />
+            <Label layoutX="29.0" layoutY="143.0" text="Transaction Type" />
+            <ComboBox fx:id="cbdrugClass" layoutX="149.0" layoutY="44.0" prefHeight="25.0" prefWidth="212.0" promptText="Select Drug Class" />
+            <ComboBox fx:id="cbcmscodes" layoutX="149.0" layoutY="17.0" prefHeight="25.0" prefWidth="212.0" promptText="Select CMSCODE (Option)" />
+            <ComboBox fx:id="cbDosageForm" layoutX="149.0" layoutY="71.0" onAction="#GetDrugNames" prefHeight="25.0" prefWidth="212.0" promptText="Select Dosage Form" />
+            <ComboBox fx:id="cbDrugName" layoutX="149.0" layoutY="98.0" onAction="#GetStrength" prefHeight="25.0" prefWidth="212.0" promptText="Select Drug Name" />
+            <Button fx:id="btnSaveDrug" layoutX="23.0" layoutY="201.0" mnemonicParsing="false" onAction="#SaveDrug" text="Save Drug" />
+            <Button layoutX="113.0" layoutY="201.0" mnemonicParsing="false" text="Update Drug" />
+            <Button layoutX="215.0" layoutY="201.0" mnemonicParsing="false" text="Delete Drug" />
+            <Separator layoutY="197.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Separator layoutY="229.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <ComboBox fx:id="cbStrength" layoutX="677.0" layoutY="13.0" onAction="#GetIssueUnit" prefHeight="25.0" prefWidth="212.0" promptText="Select Strength" />
+            <ComboBox fx:id="cbIssueUnit" layoutX="677.0" layoutY="46.0" prefHeight="25.0" prefWidth="212.0" promptText="Select Issue Unit" />
+            <DatePicker fx:id="DpExpiryDate" layoutX="677.0" layoutY="75.0" prefHeight="25.0" prefWidth="212.0" promptText="Expiry Date" />
+            <TextField fx:id="txtQuantity" layoutX="677.0" layoutY="104.0" prefHeight="25.0" prefWidth="212.0" promptText="Quantity" />
+            <ComboBox fx:id="cbTransactionType" layoutX="149.0" layoutY="140.0" prefHeight="25.0" prefWidth="212.0" promptText="Select Transaction Type" />
+            <Label fx:id="lblGeneralError" layoutX="475.0" layoutY="205.0" />
+            <Label fx:id="cmscodeError" layoutX="382.0" layoutY="21.0" textFill="#dd0606" />
+            <Label fx:id="DrugError" layoutX="382.0" layoutY="48.0" textFill="#eb0d0d" />
+            <Label fx:id="DosageError" layoutX="382.0" layoutY="75.0" textFill="#dd0909" />
+            <Label fx:id="DrugNameError" layoutX="382.0" layoutY="102.0" textFill="#da1111" />
+            <Label layoutX="382.0" layoutY="143.0" textFill="#e80a0a" />
+            <Label fx:id="StrengthError" layoutX="907.0" layoutY="17.0" textFill="#d30c0c" />
+            <Label fx:id="IssueUnitError" layoutX="907.0" layoutY="48.0" textFill="#e40a0a" />
+            <Label fx:id="ExpiryDateError" layoutX="907.0" layoutY="81.0" textFill="#ee0909" />
+            <Label fx:id="QuantityError" layoutX="907.0" layoutY="111.0" textFill="#e80b0b" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="TVDrugEntry" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="468.0" prefWidth="1178.0" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>

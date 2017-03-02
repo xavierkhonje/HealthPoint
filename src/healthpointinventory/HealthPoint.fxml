@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" stylesheets="@../Resources/login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthpointinventory.HealthPointController">
+   <children>
+      <Pane id="LoginPane" layoutX="513.0" layoutY="236.0" prefHeight="402.0" prefWidth="321.0">
+         <children>
+            <TextField id="email" fx:id="HPemail" layoutX="17.0" layoutY="169.0" prefHeight="33.0" prefWidth="288.0" promptText="Email">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="16.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></TextField>
+            <PasswordField id="password" fx:id="HPpassword" layoutX="17.0" layoutY="222.0" prefHeight="33.0" prefWidth="288.0" promptText="Password">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="16.0" />
+               </font></PasswordField>
+            <Button fx:id="LOGINBTN" defaultButton="true" layoutX="18.0" layoutY="286.0" mnemonicParsing="false" onAction="#UserLogin" prefHeight="27.0" prefWidth="288.0" text="Login">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="65.0" prefHeight="33.0" prefWidth="288.0" text="Login" textAlignment="CENTER" textFill="#047eae">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Button fx:id="EXITBTN" layoutX="17.0" layoutY="328.0" mnemonicParsing="false" onAction="#ExitHealthPoint" prefHeight="27.0" prefWidth="288.0" text="Exit">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label fx:id="lblLoginMsg" layoutX="69.0" layoutY="112.0" text="Enter your account details to Login" textFill="#077483" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

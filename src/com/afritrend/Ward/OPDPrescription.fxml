@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.WardController.OPDPrescriptionController">
+    <stylesheets>
+        <URL value="@/Resources/patientmain.css" />
+    </stylesheets>       
+    <children>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="11.0" layoutY="110.0" text="CMSCODE :" />
+            <Label layoutX="454.0" layoutY="19.0" text="Start Date :" />
+            <Label layoutX="10.0" layoutY="21.0" text="Stop Date" />
+            <Button layoutX="77.0" layoutY="196.0" mnemonicParsing="false" onAction="#Prescribe" text="Prescribe" />
+            <Label layoutX="455.0" layoutY="62.0" text="Patient ID :" />
+            <TextField fx:id="txtPatientID" layoutX="520.0" layoutY="57.0" prefHeight="25.0" prefWidth="174.0" />
+            <ComboBox fx:id="dbcmscodes" layoutX="76.0" layoutY="106.0" prefHeight="25.0" prefWidth="174.0" />
+            <DatePicker fx:id="DpStartDate" layoutX="517.0" layoutY="17.0" />
+            <Label layoutX="10.0" layoutY="64.0" text="Drug Type" />
+            <ComboBox fx:id="dbDrugType" layoutX="76.0" layoutY="60.0" prefHeight="25.0" prefWidth="174.0" />
+            <Label layoutX="11.0" layoutY="154.0" text="Strength" />
+            <ComboBox fx:id="dbStrength" layoutX="77.0" layoutY="150.0" prefHeight="25.0" prefWidth="174.0" />
+            <Label fx:id="StopDateError" layoutX="254.0" layoutY="21.0" prefHeight="17.0" prefWidth="165.0" />
+            <Label fx:id="dbDrugTypeError" layoutX="254.0" layoutY="64.0" prefHeight="17.0" prefWidth="165.0" />
+            <Label fx:id="cmscodeError" layoutX="254.0" layoutY="110.0" prefHeight="17.0" prefWidth="165.0" />
+            <Label fx:id="StrengthError" layoutX="254.0" layoutY="154.0" prefHeight="17.0" prefWidth="165.0" />
+            <Label fx:id="StartDateError" layoutX="714.0" layoutY="19.0" prefHeight="17.0" prefWidth="210.0" />
+            <Label fx:id="PatientIDError" layoutX="714.0" layoutY="61.0" prefHeight="17.0" prefWidth="210.0" />
+            <DatePicker fx:id="dpStopDate" layoutX="77.0" layoutY="17.0" />
+            <Label layoutX="455.0" layoutY="102.0" text="Drug Name :" />
+            <Label layoutX="455.0" layoutY="132.0" text="Frequency :" />
+            <TextField fx:id="txtDrugName" layoutX="533.0" layoutY="98.0" prefHeight="25.0" prefWidth="165.0" />
+            <TextField fx:id="txtFrequency" layoutX="533.0" layoutY="128.0" prefHeight="25.0" prefWidth="165.0" />
+            <ComboBox fx:id="cbDosageCodes" layoutX="533.0" layoutY="163.0" prefHeight="25.0" prefWidth="174.0" />
+            <Label layoutX="454.0" layoutY="168.0" text="Dosage :" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="TVDrugEntry" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="363.0" prefWidth="1178.0" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>

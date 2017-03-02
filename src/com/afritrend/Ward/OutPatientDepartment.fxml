@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.WardController.OutPatientDepartmentController">
+      <children>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+         <children>
+            <Label text="Patient No.">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="8.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="txtUpdateApproved" prefHeight="25.0" prefWidth="125.0" promptText="First Name">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="FirstName">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="8.0" />
+               </HBox.margin>
+            </Label>
+            <TextField promptText="First Name">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="LastName">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="8.0" />
+               </HBox.margin>
+            </Label>
+            <TextField promptText="Last Name">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="btnSearchPatient" mnemonicParsing="false" onAction="#GetOPDPrescriptions" text="Search">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#saveprescription" text="Show Requisitions">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>   
+      <TableView fx:id="PatientTV" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#PatientSelect_DrugPrescribe" prefHeight="365.0" prefWidth="673.0" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>

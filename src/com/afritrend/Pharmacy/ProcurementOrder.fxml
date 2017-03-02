@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.afritrend.PharmacyController.ProcurementOrderController">
+    <stylesheets>
+        <URL value="@/Resources/patientmain.css" />
+    </stylesheets>
+   <children>
+      <Button layoutX="57.0" layoutY="270.0" mnemonicParsing="false" onAction="#MakeOrder" text="Place Order" />
+      <TextField fx:id="iditemcode" layoutX="193.0" layoutY="74.0" prefHeight="25.0" prefWidth="255.0" />
+      <TextField fx:id="idQuantity" layoutX="193.0" layoutY="230.0" prefHeight="25.0" prefWidth="255.0" />
+      <TextArea fx:id="ItemDescription" layoutX="193.0" layoutY="110.0" prefHeight="111.0" prefWidth="255.0" />
+      <Label layoutX="57.0" layoutY="78.0" text="ItemCode" />
+      <Label layoutX="57.0" layoutY="234.0" text="Quantity" />
+      <Label layoutX="57.0" layoutY="110.0" text="Description" />
+   </children>
+</AnchorPane>

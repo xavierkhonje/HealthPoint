@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="469.0" prefWidth="1008.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.PharmacyController.NewWardController">
+    <stylesheets>
+        <URL value="@/Resources/patientmain.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="30.0" layoutY="72.0" text="Ward Name" />
+      <Label layoutX="30.0" layoutY="104.0" text="Location" />
+      <TextField fx:id="txtWardName" layoutX="123.0" layoutY="68.0" prefHeight="25.0" prefWidth="185.0" />
+      <Button layoutX="370.0" layoutY="161.0" mnemonicParsing="false" onAction="#SaveWard" text="Save" />
+      <TextArea fx:id="txtWardLocation" layoutX="123.0" layoutY="96.0" prefHeight="90.0" prefWidth="185.0" />
+      <Separator layoutX="30.0" layoutY="199.0" prefHeight="2.0" prefWidth="559.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <padding>
+            <Insets left="30.0" right="30.0" />
+         </padding></Separator>
+      <Label fx:id="WardNameError" layoutX="328.0" layoutY="72.0" prefHeight="17.0" prefWidth="220.0" text="*" textFill="#eb0505" />
+      <Label fx:id="WardLocationError" layoutX="328.0" layoutY="96.0" prefHeight="17.0" prefWidth="220.0" text="*" textFill="#eb0505" />
+      <Label layoutX="30.0" layoutY="26.0" text="Ward Details">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="TVWards" layoutX="6.0" layoutY="384.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#GetSelectedWard" prefHeight="266.0" prefWidth="1008.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+   </children>
+</AnchorPane>

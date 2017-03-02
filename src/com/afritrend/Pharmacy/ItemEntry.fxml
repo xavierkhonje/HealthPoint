@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="MainStage" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.PharmacyController.ItemEntryController">
+    <stylesheets>
+        <URL value="@/Resources/patientmain.css" />
+    </stylesheets>
+   <children>
+      <VBox layoutX="42.0" layoutY="330.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label layoutX="27.0" layoutY="58.0" styleClass="Interfacelabel" text="Code :" />
+                  <Label layoutX="27.0" layoutY="30.0" styleClass="Interfacelabel" text="CMS Class :" />
+                  <Label layoutX="27.0" layoutY="86.0" styleClass="Interfacelabel" text="Issue Unit :" />
+                  <Label layoutX="27.0" layoutY="114.0" styleClass="Interfacelabel" text="Price :" />
+                  <Label layoutX="27.0" layoutY="140.0" styleClass="Interfacelabel" text="Description :" />
+                  <ComboBox fx:id="cbCode" layoutX="102.0" layoutY="52.0" onAction="#GetItemName" prefHeight="25.0" prefWidth="205.0" promptText="Select Code" styleClass="cbInterfaceComboCox" />
+                  <ComboBox fx:id="cbClass" layoutX="102.0" layoutY="24.0" onAction="#GetItemCode" prefHeight="25.0" prefWidth="205.0" promptText="Select Class" styleClass="cbInterfaceComboCox" />
+                  <TextField fx:id="txtIssueUnit" layoutX="102.0" layoutY="80.0" prefHeight="25.0" prefWidth="205.0" promptText="Issue Unit" styleClass="txtIntefaceTextField" />
+                  <TextField fx:id="txtPrice" layoutX="102.0" layoutY="108.0" prefHeight="25.0" prefWidth="205.0" promptText="Price" styleClass="txtIntefaceTextField" />
+                  <TextArea fx:id="txtDescription" layoutX="102.0" layoutY="136.0" prefHeight="80.0" prefWidth="205.0" promptText="Description" styleClass="txtInterfaceTextArea" />
+                  <Label layoutX="528.0" layoutY="87.0" styleClass="Interfacelabel" text="Name :" />
+                  <Label layoutX="528.0" layoutY="57.0" styleClass="Interfacelabel" text="Dosage Form :" />
+                  <Label layoutX="528.0" layoutY="115.0" styleClass="Interfacelabel" text="Strength :" />
+                  <ComboBox fx:id="cbDosageForm" layoutX="611.0" layoutY="54.0" prefHeight="25.0" prefWidth="205.0" promptText="Select Dosage Form" styleClass="cbInterfaceComboCox" />
+                  <Button layoutX="528.0" layoutY="157.0" mnemonicParsing="false" onAction="#ConvertCMSCode" prefHeight="25.0" prefWidth="90.0" styleClass="btnInterfaceButton" text="Convert" />
+                  <ComboBox fx:id="cbDrugClass" layoutX="611.0" layoutY="26.0" prefHeight="25.0" prefWidth="205.0" promptText="Select Drug Class" />
+                  <Label layoutX="527.0" layoutY="30.0" text="Drug Class" />
+                  <Button layoutX="801.0" layoutY="157.0" mnemonicParsing="false" onAction="#Edit_Drug" prefHeight="25.0" prefWidth="90.0" text="Update Drug" />
+                  <Button layoutX="702.0" layoutY="157.0" mnemonicParsing="false" onAction="#Deactivate" prefHeight="25.0" prefWidth="90.0" text="Deactivate" />
+                  <Button layoutX="905.0" layoutY="157.0" mnemonicParsing="false" onAction="#SearchDrug" text="Search" />
+                  <Label fx:id="lblClasserror" layoutX="317.0" layoutY="28.0" prefHeight="17.0" prefWidth="160.0" textFill="#e11414" />
+                  <Label fx:id="lblCodeError" layoutX="611.0" layoutY="191.0" prefHeight="25.0" prefWidth="205.0" textFill="#e11414" />
+                  <Label fx:id="lblIssueUnit" layoutX="317.0" layoutY="84.0" prefHeight="17.0" prefWidth="160.0" textFill="#e11414" />
+                  <Label fx:id="lblPriceError" layoutX="316.0" layoutY="112.0" prefHeight="17.0" prefWidth="160.0" textFill="#e11414" />
+                  <Label fx:id="lblDescriptionError" layoutX="315.0" layoutY="140.0" prefHeight="17.0" prefWidth="160.0" textFill="#e11414" />
+                  <Label fx:id="lblItemNameError" layoutX="832.0" layoutY="87.0" prefHeight="17.0" prefWidth="147.0" textFill="#e11414" />
+                  <Label fx:id="lblDrugClassName" layoutX="831.0" layoutY="30.0" prefHeight="17.0" prefWidth="147.0" textFill="#e11414" />
+                  <Label fx:id="lblDosageFormError" layoutX="832.0" layoutY="58.0" prefHeight="17.0" prefWidth="147.0" textFill="#e11414" />
+                  <Label fx:id="lblStrengthError" layoutX="831.0" layoutY="115.0" prefHeight="17.0" prefWidth="147.0" textFill="#e11414" />
+                  <Label id="GeneralMessage" fx:id="lblGeneralMessage" layoutX="317.0" layoutY="55.0" prefHeight="17.0" prefWidth="160.0" textFill="#e10f0f">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtName" layoutX="612.0" layoutY="82.0" prefHeight="25.0" prefWidth="205.0" promptText="Item Name" />
+                  <TextField fx:id="txtStrength" layoutX="611.0" layoutY="110.0" prefHeight="25.0" prefWidth="205.0" promptText="Strength" />
+                  <Button layoutX="631.0" layoutY="157.0" mnemonicParsing="false" onAction="#Activate" text="Activate" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <TableView fx:id="TVitemEntry" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#ShowDetails" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
