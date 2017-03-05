@@ -54,8 +54,9 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                    <MenuItem fx:id="mnuClosehealthPoint" mnemonicParsing="false" onAction="#LogOutHealthPoint" styleClass="MenuTitles" text="Close" />
                         <MenuItem fx:id="mnuHome" mnemonicParsing="false" onAction="#GoHome" text="Home" />
+                        <MenuItem fx:id="mnuNewPatient" mnemonicParsing="false" onAction="#NewPatient" text="New Patient" />
+                    <MenuItem fx:id="mnuClosehealthPoint" mnemonicParsing="false" onAction="#LogOutHealthPoint" styleClass="MenuTitles" text="Close" />
                   </items>
                 </Menu>
                   <Menu mnemonicParsing="false" text="Item">

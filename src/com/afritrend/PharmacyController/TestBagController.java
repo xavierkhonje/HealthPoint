@@ -3,13 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.afritrend.WardController;
+package com.afritrend.PharmacyController;
 
-import com.afritrend.PharmacyModel.OPDPrescriptionModel;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 /**
@@ -17,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author Xavier Khonje
  */
-public class OPDPrescriptionController implements Initializable {
+public class TestBagController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -27,11 +24,4 @@ public class OPDPrescriptionController implements Initializable {
         // TODO
     }    
     
-    @FXML
-    private void Prescribe(ActionEvent event)
-    {
-        OPDPrescriptionModel prescribe = new OPDPrescriptionModel();
-//        prescribe.setDrugName();
-        
-    }
 }

@@ -122,12 +122,13 @@ public class OutPatientDepartmentController implements Initializable {
             //load the fxml for gridpane and retrieve this note for printing
         try
         {            
-            FXMLLoader fxloader = new FXMLLoader(getClass().getResource("/com/afritrend/Pharmacy/PillBagLabel.fxml"));
+//            FXMLLoader fxloader = new FXMLLoader(getClass().getResource("/com/afritrend/Pharmacy/PillBagLabel.fxml"));
+            FXMLLoader fxloader = new FXMLLoader(getClass().getResource("/com/afritrend/Pharmacy/TestBag.fxml"));
 //            FXMLLoader fxloader = new FXMLLoader(getClass().getResource("/com/afritrend/Pharmacy/ItemEntry.fxml"));
             Parent root = fxloader.load();  
 
-            PillBagLabelController controller = (PillBagLabelController)fxloader.getController();
-            controller.initData(OPD);             
+//            PillBagLabelController controller = (PillBagLabelController)fxloader.getController();
+//            controller.initData(OPD);             
             
             print(root);
         }
@@ -288,9 +289,9 @@ public class OutPatientDepartmentController implements Initializable {
     }
     
     public void print(final Node node) {
-        Paper photo = PrintHelper.createPaper("2x3", 2, 3, Units.INCH);
+        Paper photo = PrintHelper.createPaper("2x3", 226.77165354, 302.36220472, Units.POINT);
         Printer printer = Printer.getDefaultPrinter();
-        PageLayout pageLayout = printer.createPageLayout(Paper.A6, PageOrientation.PORTRAIT, Printer.MarginType.DEFAULT);        
+        PageLayout pageLayout = printer.createPageLayout(photo, PageOrientation.LANDSCAPE, Printer.MarginType.EQUAL);        
  
         PrinterJob job = PrinterJob.createPrinterJob();
         JobSettings jobsettings = job.getJobSettings();

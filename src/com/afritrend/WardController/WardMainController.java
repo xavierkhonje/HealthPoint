@@ -68,6 +68,20 @@ public class WardMainController implements Initializable {
         } 
     }
     
+    @FXML
+    private void NewPatient(ActionEvent event)
+    {
+        try
+        {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/afritrend/Ward/NewPatient.fxml"));
+            MainBorderPane.setCenter(root);
+        }
+        catch(Exception e)            
+        {
+            
+        }        
+    }
+    
     public void ItemEntry(ActionEvent event)
     {
         try
@@ -288,18 +302,18 @@ public class WardMainController implements Initializable {
     {
         try
         {
-            Stage LoginStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("/healthpointinventory/HealthPoint.fxml"));
-            Scene scene = new Scene(root);
-            LoginStage.setMaximized(true);
-            LoginStage.centerOnScreen();        
-            LoginStage.initStyle(StageStyle.UNDECORATED);            
-            LoginStage.setScene(scene);
+//            Stage LoginStage = new Stage();
+//            Parent root = FXMLLoader.load(getClass().getResource("/healthpointinventory/HealthPoint.fxml"));
+//            Scene scene = new Scene(root);
+//            LoginStage.setMaximized(true);
+//            LoginStage.centerOnScreen();        
+//            LoginStage.initStyle(StageStyle.UNDECORATED);            
+//            LoginStage.setScene(scene);
             
             Stage stage = (Stage)MainBorderPane.getScene().getWindow();
             stage.close();
             
-            LoginStage.show();
+//            LoginStage.show();
         }
         catch(Exception e)            
         {
