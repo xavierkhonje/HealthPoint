@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane id="MainWindowPane" fx:id="MainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.PharmacyController.PharmacyMainController">
+<BorderPane id="MainWindowPane" fx:id="MainBorderPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.PharmacyController.PharmacyMainController">
     <stylesheets>
         <URL value="@/Resources/patientmain.css" />
     </stylesheets>

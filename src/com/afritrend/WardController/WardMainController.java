@@ -25,6 +25,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -48,6 +49,9 @@ public class WardMainController implements Initializable {
     
     @FXML
     Label lblLogedUserStatus;
+    
+    @FXML
+    MenuItem mnuPrescribe;
     /**
      * Initializes the controller class.
      */
@@ -55,7 +59,7 @@ public class WardMainController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         try
         {
-
+//            mnuPrescribe.setDisable(true);
             
             Parent root = FXMLLoader.load(getClass().getResource("/com/afritrend/Ward/Home.fxml"));
             MainBorderPane.setCenter(root);        
@@ -145,6 +149,19 @@ public class WardMainController implements Initializable {
         try
         {
             Parent root = FXMLLoader.load(getClass().getResource("/com/afritrend/Ward/OutPatientDepartment.fxml"));
+            MainBorderPane.setCenter(root);
+        }
+        catch(Exception e)            
+        {
+            
+        }       
+   }
+   @FXML
+   private void MakePrescription(ActionEvent event)
+   {
+        try
+        {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/afritrend/Ward/OPDPrescription.fxml"));
             MainBorderPane.setCenter(root);
         }
         catch(Exception e)            

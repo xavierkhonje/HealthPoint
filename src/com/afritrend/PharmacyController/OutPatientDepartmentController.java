@@ -277,6 +277,8 @@ public class OutPatientDepartmentController implements Initializable {
                     patient.getInstruction(),
                     patient.getMalangizo(),
                     patient.getExpirydate(),
+                    patient.getStrength(),
+                    patient.getQuantity(),
                     patient.getPx(),                    
                     patient.getFrequency(),
                     patient.getPrescrionbarcode()));                  

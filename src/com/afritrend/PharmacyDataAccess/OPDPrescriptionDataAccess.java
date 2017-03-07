@@ -40,7 +40,7 @@ public class OPDPrescriptionDataAccess implements IOPDPrescription{
                 FileInputStream fis = new FileInputStream(file);
                 int len = (int)file.length();                
                 
-                String sql = "{CALL spHP_OPDPrescriptionItem(?,?,?,?,?,?,?)}";    
+                String sql = "{CALL spHP_OPDPrescriptionItem(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";    
                 
                 stmt = conn.prepareCall(sql);
                 stmt.setString(1, OPDPrescription.getPatientNo());
@@ -50,6 +50,13 @@ public class OPDPrescriptionDataAccess implements IOPDPrescription{
                 stmt.setString(5,file.getName());
                 stmt.setInt(6, len);
                 stmt.setBinaryStream(7, fis, len);
+                stmt.setString(8, OPDPrescription.getDrugName());
+                stmt.setString(9, OPDPrescription.getInstruction());
+                stmt.setString(10, OPDPrescription.getMalangizo());
+                stmt.setString(11, OPDPrescription.getPx());
+                stmt.setString(12,OPDPrescription.getDosageForm());
+                stmt.setString(13, OPDPrescription.getStrength());
+                stmt.setInt(14, OPDPrescription.getQuantity());                
                 
                 stmt.execute();
             }

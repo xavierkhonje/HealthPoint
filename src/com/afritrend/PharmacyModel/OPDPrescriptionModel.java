@@ -24,6 +24,8 @@ public class OPDPrescriptionModel implements Serializable{
     private String instruction;
     private String malangizo;
     private String expirydate;
+    private String strength;
+    private int quantity;
     private String px;
     private int frequency;    
     private byte[] prescrionbarcode;
@@ -31,7 +33,7 @@ public class OPDPrescriptionModel implements Serializable{
     public OPDPrescriptionModel() {
     }
 
-    public OPDPrescriptionModel(int prescriptionid, String patientNo, String firstName, String middleName, String lastName, String cmsCode, String drugName, String admissionCode, String dosageForm, String instruction, String malangizo, String expirydate, String px, int frequency, byte[] prescrionbarcode) {
+    public OPDPrescriptionModel(int prescriptionid, String patientNo, String firstName, String middleName, String lastName, String cmsCode, String drugName, String admissionCode, String dosageForm, String instruction, String malangizo, String expirydate, String strength, int quantity, String px, int frequency, byte[] prescrionbarcode) {
         this.prescriptionid = prescriptionid;
         this.patientNo = patientNo;
         this.firstName = firstName;
@@ -44,6 +46,8 @@ public class OPDPrescriptionModel implements Serializable{
         this.instruction = instruction;
         this.malangizo = malangizo;
         this.expirydate = expirydate;
+        this.strength = strength;
+        this.quantity = quantity;
         this.px = px;
         this.frequency = frequency;
         this.prescrionbarcode = prescrionbarcode;
@@ -64,6 +68,22 @@ public class OPDPrescriptionModel implements Serializable{
     public void setPatientNo(String patientNo) {
         this.patientNo = patientNo;
     }
+
+    public String getStrength() {
+        return strength;
+    }
+
+    public void setStrength(String strength) {
+        this.strength = strength;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }        
 
     public String getFirstName() {
         return firstName;

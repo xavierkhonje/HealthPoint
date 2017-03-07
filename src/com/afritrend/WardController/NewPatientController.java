@@ -5,8 +5,10 @@
  */
 package com.afritrend.WardController;
 
+import com.afritrend.WardDataAccess.PatientDataAcess;
 import com.afritrend.WardModel.GuardianModel;
 import com.afritrend.WardModel.patientModel;
+import com.afritrend.common.Model.SessionManagement;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -78,7 +80,6 @@ public class NewPatientController implements Initializable {
     @FXML
     Label lblGeneralError;
     
-    ////
     @FXML
     Label txtGrFirstnameError;
     
@@ -137,8 +138,8 @@ public class NewPatientController implements Initializable {
             patient.setAddress2(txtAddress2.getText());
             patient.setImage("test");
             patient.setHospitalName("QECH");
-            patient.setWardName("test");
-            patient.setWardDptName("test");
+            patient.setWardName(SessionManagement._wardName);
+            patient.setWardDptName("MEDICAL");
             
             GuardianModel guardian = new GuardianModel();
             
@@ -204,10 +205,10 @@ public class NewPatientController implements Initializable {
             }
             else
             {
-//                    PatientDataAcess patientdao = new PatientDataAcess();
-//                    String response = patientdao.PatientRegistration(patient,guardian);
-                    
-//                    lblGeneralError.setText(response);                       
+                PatientDataAcess patientdao = new PatientDataAcess();
+                String response = patientdao.PatientRegistration(patient,guardian);
+
+                lblGeneralError.setText(response);                       
             }
             
         }

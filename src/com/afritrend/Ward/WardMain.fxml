@@ -8,45 +8,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane id="MainWindowPane" fx:id="MainBorderPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.WardController.WardMainController">
+<BorderPane id="MainWindowPane" fx:id="MainBorderPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.WardController.WardMainController">
     <stylesheets>
         <URL value="@/Resources/patientmain.css" />
     </stylesheets>
-   <left>
-      <Accordion id="Accordion" BorderPane.alignment="CENTER">
-        <panes>
-          <TitledPane id="Accordion" animated="false" text="My Shortcuts">
-               <content>
-                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
-                     <children>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#GoHome" text="Home" VBox.vgrow="ALWAYS">
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin></Button>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ShowDrugSettings" text="Settings" VBox.vgrow="ALWAYS" />
-                        <Button fx:id="btnDrugsEntry" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ShowDrugsEntry" styleClass="AccordionButtons" text="Drugs Entry" VBox.vgrow="ALWAYS">
-                           <VBox.margin>
-                              <Insets bottom="5.0" top="5.0" />
-                           </VBox.margin>
-                        </Button>
-                        <Button fx:id="btnSundriesEntry" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ShowSundriesEntry" text="Sundries Entry" VBox.vgrow="ALWAYS" />
-                     </children>
-                  </VBox>
-               </content>
-          </TitledPane>
-          <TitledPane id="Accordion" animated="false" text="Windows">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </TitledPane>
-          <TitledPane id="Accordion" animated="false" text="Items">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </TitledPane>
-        </panes>
-      </Accordion>
-   </left>
    <top>
       <HBox id="HBox" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
          <children>
@@ -54,60 +19,71 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                        <MenuItem fx:id="mnuHome" mnemonicParsing="false" onAction="#GoHome" text="Home" />
+                        <MenuItem fx:id="mnuHome" mnemonicParsing="false" onAction="#GoHome" text="Dashboard" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem fx:id="mnuNewPatient" mnemonicParsing="false" onAction="#NewPatient" text="New Patient" />
-                    <MenuItem fx:id="mnuClosehealthPoint" mnemonicParsing="false" onAction="#LogOutHealthPoint" styleClass="MenuTitles" text="Close" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem fx:id="mnuClosehealthPoint" mnemonicParsing="false" onAction="#LogOutHealthPoint" styleClass="MenuTitles" text="Close HealthPoint" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Item">
+                  <Menu mnemonicParsing="false" text="Inventory">
                     <items>
-                      <MenuItem fx:id="mnuItemEntry" mnemonicParsing="false" onAction="#ItemEntry" styleClass="MenuTitles" text="CMS Item Entry" />
-                        <MenuItem fx:id="mnudrugsentry" mnemonicParsing="false" onAction="#ShowDrugsEntry" text="Pharmacy Drugs Entry" />
-                        <MenuItem fx:id="mnusundriesentry" mnemonicParsing="false" onAction="#ShowSundriesEntry" text="Pharmacy Sundries Entry" />
+                        <MenuItem fx:id="mnudrugsentry" mnemonicParsing="false" onAction="#ShowDrugsEntry" text="Drug Inventory" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mnusundriesentry" mnemonicParsing="false" onAction="#ShowSundriesEntry" text="Sundry Inventory" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mnusettings" mnemonicParsing="false" onAction="#ShowDrugSettings" text="Inventory Settings" />
                     </items>
                   </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" styleClass="MenuTitles" text="Delete" />
-                        <MenuItem mnemonicParsing="false" text="Preferences" />
-                        <MenuItem fx:id="mnusettings" mnemonicParsing="false" onAction="#ShowDrugSettings" text="Drug Settings" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" styleClass="MenuTitles" text="About" />
-                  </items>
-                </Menu>
+                  <Menu mnemonicParsing="false" text="Out Patient Department">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#ShowOutPatientDepartment" text="Out Patient Selection" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                      <MenuItem fx:id="mnuPrescribe" mnemonicParsing="false" onAction="#MakePrescription" text="Out Patient Prescription" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="In-Patient">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Select In-Patient" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="In-Patient Prescription" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="In-Patient Administration" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Requisition">
+                    <items>
+                      <MenuItem fx:id="mnurequisition" mnemonicParsing="false" onAction="#NewRequisition" text="Make New Requisition" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mnuAproveRequisition" mnemonicParsing="false" onAction="#ViewRequisition" text="Approve New Requisition" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mnuReceiveOrder" mnemonicParsing="false" onAction="#ReceiveOrder" text="Receive Requisition From Pharmacy" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mnuFinalize" mnemonicParsing="false" onAction="#FinalizeOrder" text="Close Received Requisition" />
+                    </items>
+                  </Menu>
                   <Menu mnemonicParsing="false" text="Reports">
                     <items>
                       <MenuItem fx:id="mnuDrugSummary" mnemonicParsing="false" onAction="#ShowDrugSummary" text="Drug Summary Report" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem fx:id="mnuSrugStockCard" mnemonicParsing="false" onAction="#ShowDrugStockCard" text="Drug Stock Card Report" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem fx:id="mnuDrugsLost" mnemonicParsing="false" onAction="#ShowDrugsLostReport" text="Drugs Lost Report" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem fx:id="mnuSundriesLostReport" mnemonicParsing="false" onAction="#ShowSundriesLostReport" text="Sundries Lost Report" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#ShowDrugsExpiryReport" text="Drugs Expiry Report" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem fx:id="mnusundriesexpiry" mnemonicParsing="false" onAction="#ShowSundriesExpiryReport" text="Sundries Expiry Report" />
                     </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="OPD">
-                    <items>
-                      <MenuItem mnemonicParsing="false" onAction="#ShowOutPatientDepartment" text="Out Patient Department" />
-                    </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Orders">
-                    <items>
-                      <MenuItem fx:id="mnurequisition" mnemonicParsing="false" onAction="#NewRequisition" text="New Requisition" />
-                        <MenuItem fx:id="mnuAproveRequisition" mnemonicParsing="false" onAction="#ViewRequisition" text="Approve Requisition" />
-                        <MenuItem fx:id="mnuReceiveOrder" mnemonicParsing="false" onAction="#ReceiveOrder" text="Receive Order" />
-                        <MenuItem fx:id="mnuFinalize" mnemonicParsing="false" onAction="#FinalizeOrder" text="Finalize Order" />
-                    </items>
-                  </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" styleClass="MenuTitles" text="About HealthPoint" />
+                  </items>
+                </Menu>
               </menus>
             </MenuBar>
-            <TextField id="SearchBox" promptText="SEARCH">
-               <HBox.margin>
-                  <Insets left="5.0" right="5.0" />
-               </HBox.margin>
-            </TextField>
          </children>
          <BorderPane.margin>
             <Insets />
@@ -128,4 +104,29 @@
          </children>
       </HBox>
    </bottom>
+   <left>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+         <children>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#GoHome" prefHeight="25.0" prefWidth="160.0" text="Home" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ShowDrugSettings" prefHeight="25.0" prefWidth="160.0" text="Settings" VBox.vgrow="ALWAYS" />
+                  <Button fx:id="btnDrugsEntry" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ShowDrugsEntry" prefHeight="25.0" prefWidth="160.0" styleClass="AccordionButtons" text="Drugs Entry" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnSundriesEntry" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ShowSundriesEntry" prefHeight="25.0" prefWidth="160.0" text="Sundries Entry" VBox.vgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </left>
 </BorderPane>
