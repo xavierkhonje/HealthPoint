@@ -88,6 +88,15 @@ public class OPDPrescriptionController implements Initializable {
             String item = classit.next();
             cbDosageForm.getItems().add(item);
         }     
+        
+        list = autodrugdao.GetDosageForms();
+
+        Iterator<String> cmscodelistit = list.iterator();        
+        while(cmscodelistit.hasNext())
+        {
+            String item = cmscodelistit.next();
+            cbcmscode.getItems().add(item);
+        }     
     }    
     
     public void initData(patientModel patient)

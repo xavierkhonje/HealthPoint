@@ -127,8 +127,7 @@ public class AutoDrugSearchDataAccess implements IAutoDrugSearch{
         
         return IssueUnitlist;         
     }    
-    
-    
+        
     public List<String> GetHPDrugNamesByDosageForm(String DosageForm) {
         List<String> druglist =  new ArrayList();
         
@@ -368,7 +367,6 @@ public class AutoDrugSearchDataAccess implements IAutoDrugSearch{
         return ItemsNamelist;          
     }    
     
-
     public List<String> GetHPItemCode() {
         List<String> ItemsNamelist =  new ArrayList();
         

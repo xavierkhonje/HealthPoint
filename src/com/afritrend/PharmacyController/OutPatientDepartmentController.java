@@ -9,11 +9,14 @@ import com.afritrend.PharmacyDataAccess.OPDPrescriptionDataAccess;
 import com.afritrend.PharmacyModel.OPDPrescriptionModel;
 import com.sun.javafx.print.PrintHelper;
 import com.sun.javafx.print.Units;
+import static com.sun.javafx.print.Units.MM;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -34,6 +37,7 @@ import javafx.print.PageLayout;
 import javafx.print.PageOrientation;
 import javafx.print.Paper;
 import javafx.print.Printer;
+import javafx.print.PrinterAttributes;
 import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -48,6 +52,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Circle;
+import javafx.scene.transform.Scale;
 
 /**
  * FXML Controller class
@@ -129,8 +135,11 @@ public class OutPatientDepartmentController implements Initializable {
 
 //            PillBagLabelController controller = (PillBagLabelController)fxloader.getController();
 //            controller.initData(OPD);             
-            
-            print(root);
+//            Label label = new Label();
+//            Node node = new Circle(2,2,2);
+//            label.setText("Health Point");
+////            print(label);
+            printNode(root);
         }
         catch(LoadException ex)
         {
@@ -139,6 +148,7 @@ public class OutPatientDepartmentController implements Initializable {
         catch(Exception e)
         {
             System.out.println(e.getMessage());
+            System.out.println("Unable to Print");
         }                
             
             GridPane gridpane = new GridPane();
@@ -291,23 +301,78 @@ public class OutPatientDepartmentController implements Initializable {
     }
     
     public void print(final Node node) {
-        Paper photo = PrintHelper.createPaper("2x3", 226.77165354, 302.36220472, Units.POINT);
-        Printer printer = Printer.getDefaultPrinter();
-        PageLayout pageLayout = printer.createPageLayout(photo, PageOrientation.LANDSCAPE, Printer.MarginType.EQUAL);        
- 
-        PrinterJob job = PrinterJob.createPrinterJob();
-        JobSettings jobsettings = job.getJobSettings();
-        jobsettings.setPageLayout(pageLayout);
-//        double pgw = pageLayout.getPrintableWidth();
-//        double pgh = pageLayout.getPrintableHeight();
-        
-//        if (job != null && job.showPrintDialog(null)) {
-        if (job != null) {
-            boolean success = job.printPage(node);
-            if (success) {
-                job.endJob();
-            }
+//        Paper photo = PrintHelper.createPaper("2x3", 226.77165354, 302.36220472, Units.POINT);
+        try
+        {
+//                Constructor<Paper> c = Paper.class.getDeclaredConstructor(String.class,double.class, double.class, Units.class);
+//                c.setAccessible(true);
+//                Paper photo = c.newInstance("29mm x 2", 23.0, 23.0, MM);  
+                
+                Paper photo = PrintHelper.createPaper("Visitor Name Badge Label", 62.0, 80.0, Units.MM);
+                Printer printer = Printer.getDefaultPrinter();
+                PageLayout pageLayout = printer.createPageLayout(photo, PageOrientation.LANDSCAPE, Printer.MarginType.HARDWARE_MINIMUM);        
+                PrinterJob job = PrinterJob.createPrinterJob();
+                JobSettings jobsettings = job.getJobSettings();
+                jobsettings.setPageLayout(pageLayout);
+        //        double pgw = pageLayout.getPrintableWidth();
+        //        double pgh = pageLayout.getPrintableHeight();
+
+        //        if (job != null && job.showPrintDialog(null)) {
+                if (job != null) {
+                    boolean success = job.printPage(node);
+                    if (success) {
+                        job.endJob();
+                    }
+                }                
         }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+
             
-    }   
+    }  
+    
+  public static void printNode(final Node node) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
+    
+    try
+    {
+        Printer printer = Printer.getDefaultPrinter();
+        Paper photo = PrintHelper.createPaper("Visitor Name Badge Label", 62.0, 80.0, Units.MM);
+        PageLayout pageLayout = printer.createPageLayout(photo, PageOrientation.LANDSCAPE, Printer.MarginType.HARDWARE_MINIMUM);
+//        PageLayout pageLayout = printer.createPageLayout(photo, PageOrientation.LANDSCAPE, Printer.MarginType.HARDWARE_MINIMUM);
+        PrinterAttributes attr = printer.getPrinterAttributes();
+        PrinterJob job = PrinterJob.createPrinterJob();
+//        double scaleX = pageLayout.getPrintableWidth() / node.getBoundsInParent().getWidth();
+//        double scaleY = pageLayout.getPrintableHeight() / node.getBoundsInParent().getHeight();
+//        Scale scale = new Scale(scaleX, scaleY);
+//        node.getTransforms().add(scale);        
+        
+        JobSettings jobsettings = job.getJobSettings();
+        jobsettings.setPageLayout(pageLayout);        
+    //    if (job != null && job.showPrintDialog(node.getScene().getWindow())) {
+    //      boolean success = job.printPage(pageLayout, node);
+    //      if (success) {
+    //        job.endJob();
+    //
+    //      }
+    //    }
+            if (job != null) {
+                boolean success = job.printPage(node);
+                if (success) {
+                    job.endJob();
+                }
+            }    
+//        node.getTransforms().remove(scale);
+      }      
+    catch(IllegalArgumentException iae)
+    {
+        System.out.println(iae.getMessage());
+    }
+      catch(Exception e)
+      {
+          System.out.println(e.getMessage());
+          System.out.println(e.getStackTrace());
+      }
+    }
 }
