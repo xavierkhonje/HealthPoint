@@ -38,8 +38,6 @@
                   <Menu mnemonicParsing="false" text="Out Patient Department">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#ShowOutPatientDepartment" text="Out Patient Selection" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
-                      <MenuItem fx:id="mnuPrescribe" mnemonicParsing="false" onAction="#MakePrescription" text="Out Patient Prescription" />
                     </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="In-Patient">

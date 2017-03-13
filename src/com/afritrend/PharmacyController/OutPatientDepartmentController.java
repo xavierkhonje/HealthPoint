@@ -133,8 +133,8 @@ public class OutPatientDepartmentController implements Initializable {
 //            FXMLLoader fxloader = new FXMLLoader(getClass().getResource("/com/afritrend/Pharmacy/ItemEntry.fxml"));
             Parent root = fxloader.load();  
 
-//            PillBagLabelController controller = (PillBagLabelController)fxloader.getController();
-//            controller.initData(OPD);             
+            TestBagController controller = (TestBagController)fxloader.getController();
+            controller.initData(OPD);             
 //            Label label = new Label();
 //            Node node = new Circle(2,2,2);
 //            label.setText("Health Point");

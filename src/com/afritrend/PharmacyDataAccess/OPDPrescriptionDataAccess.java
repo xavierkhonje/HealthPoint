@@ -92,15 +92,15 @@ public class OPDPrescriptionDataAccess implements IOPDPrescription{
 
 //                    fileBytes = rs.getBytes(1);
                     item.setPatientNo(rs.getString("patientNo"));                
-                    item.setCmsCode(rs.getString("Cmscode"));                
-                    item.setAdmissionCode(rs.getString("AdmissionCode"));                
-                    item.setFrequency(rs.getInt("frequency")); 
                     item.setFirstName(rs.getString("FirstName")); 
                     item.setMiddleName(rs.getString("OtherNames")); 
                     item.setLastName(rs.getString("LastName")); 
+                    item.setCmsCode(rs.getString("Cmscode"));                
                     item.setDrugName(rs.getString("DrugName")); 
                     item.setDosageForm(rs.getString("DosageForm")); 
                     item.setPrescriptionid(rs.getInt("opdPrescriptionid")); 
+                    item.setAdmissionCode(rs.getString("AdmissionCode"));                
+                    item.setFrequency(rs.getInt("frequency")); 
                     item.setPrescrionbarcode(rs.getBytes("PrescriptionBarCode"));                     
 
                     opdlist.add(item);

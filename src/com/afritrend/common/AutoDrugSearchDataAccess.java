@@ -561,5 +561,36 @@ public class AutoDrugSearchDataAccess implements IAutoDrugSearch{
         
         return Transactionlist;          
     }
+        
+    public List<String> GetAdmissionCodes() {
+        List<String> Admissionlist =  new ArrayList();
+        
+        try
+        {
+            conn = config.DBConnect(); 
+            ResultSet rs = null;
+            String sql = "{CALL spHP_GETAdmissionCodes}";    
+            stmt = conn.prepareCall(sql);
+            stmt.execute();
+            
+            rs = stmt.getResultSet();
+            
+            while(rs.next())
+            {
+                String Admissioncode = rs.getString("code");
+                Admissionlist.add(Admissioncode);
+            }                        
+        }
+        catch(Exception e)
+        {
+            
+        }        
+        finally
+        {
+            
+        }        
+        
+        return Admissionlist;          
+    }
     
 }

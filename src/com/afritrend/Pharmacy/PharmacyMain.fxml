@@ -81,13 +81,15 @@
                 <Menu mnemonicParsing="false" text="File">
                   <items>
                     <MenuItem fx:id="mnuClose" mnemonicParsing="false" onAction="#LogOutHealthPoint" styleClass="MenuTitles" text="Close" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem fx:id="mnuHome" mnemonicParsing="false" onAction="#GoHome" text="Home" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="Pharmacy Items">
+                  <Menu mnemonicParsing="false" text="Items">
                     <items>
-                        <MenuItem fx:id="mnudrugsentry" mnemonicParsing="false" onAction="#ShowDrugsEntry" text="Drug Entry" />
-                        <MenuItem fx:id="mnusundriesentry" mnemonicParsing="false" onAction="#ShowSundriesEntry" text="Sundry Entry" />
+                        <MenuItem fx:id="mnudrugsentry" mnemonicParsing="false" onAction="#ShowDrugsEntry" text="Receive Drugs" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mnusundriesentry" mnemonicParsing="false" onAction="#ShowSundriesEntry" text="Receive Sundries" />
                         <!--<MenuItem mnemonicParsing="false" text="Import Drug From CSV" />
                         <MenuItem mnemonicParsing="false" text="Import Sundry From CSV" />-->
                     </items>
@@ -104,11 +106,12 @@
                       <MenuItem mnemonicParsing="false" onAction="#NewWard" text="New Ward" />
                     </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Pharmacy Reports">
+                  <Menu mnemonicParsing="false" text="Reports">
                     <items>
                       <!--<MenuItem fx:id="mnuDrugSummary" mnemonicParsing="false" onAction="#ShowDrugSummary" text="Drug Summary Report" />
                         <MenuItem mnemonicParsing="false" onAction="#ShowSundrySummaryReport" text="Sundry Summary Report" />-->
                         <MenuItem fx:id="mnuSrugStockCard" mnemonicParsing="false" onAction="#ShowDrugStockCard" text="Drug Stock Card Report" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#ShowSundryStockCard" text="Sundry Stock Card Report" />
                         <!--<MenuItem fx:id="mnuDrugsLost" mnemonicParsing="false" onAction="#ShowDrugsLostReport" text="Drugs Lost Report" />
                         <MenuItem fx:id="mnuSundriesLostReport" mnemonicParsing="false" onAction="#ShowSundriesLostReport" text="Sundries Lost Report" />
@@ -116,22 +119,25 @@
                         <MenuItem fx:id="mnusundriesexpiry" mnemonicParsing="false" onAction="#ShowSundriesExpiryReport" text="Sundries Expiry Report" />-->
                     </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="OPD">
+                  <Menu mnemonicParsing="false" text="Out Patient Department">
                     <items>
                       <MenuItem fx:id="mnuOPD" mnemonicParsing="false" onAction="#OutPatientDepartment" text="Out Patient Department" />
                     </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Item Orders">
+                  <Menu mnemonicParsing="false" text="Requisition">
                     <items>
-                      <MenuItem fx:id="mnuMakeRequisition" mnemonicParsing="false" onAction="#ReviewRequisition" text="Pack Order" />
-                        <MenuItem fx:id="mnuApprove" mnemonicParsing="false" onAction="#ApproveRequisition" text="Approve  Order" />
+                      <MenuItem fx:id="mnuMakeRequisition" mnemonicParsing="false" onAction="#ReviewRequisition" text="Pack Requisition" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mnuApprove" mnemonicParsing="false" onAction="#ApproveRequisition" text="Approve  Requisition" />
                     </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Central Medical Stores Database">
                     <items>
                       <MenuItem fx:id="mnuItemEntry" mnemonicParsing="false" onAction="#ItemEntry" styleClass="MenuTitles" text="Convert Drug" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#SundryConversion" text="Convert Sundry" />
-                        <MenuItem mnemonicParsing="false" onAction="#ProcurementOrder" text="Procurement Order" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#ProcurementOrder" text="Place an Order" />
                     </items>
                   </Menu>
                   <!--<Menu mnemonicParsing="false" text="Tools">

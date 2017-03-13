@@ -148,8 +148,9 @@ public class OutPatientDepartmentController implements Initializable {
         try 
         {
             patientModel patient = (patientModel)PatientTV.getSelectionModel().getSelectedItem();
-            Parent root = FXMLLoader.load(getClass().getResource("/com/afritrend/Ward/OPDPrescription.fxml")); 
-            MainBorderPane.setCenter(root);
+//            Parent root = FXMLLoader.load(getClass().getResource("/com/afritrend/Ward/OPDPrescription.fxml")); 
+//            MainBorderPane.setCenter(root);
+            ShowWardDetailsModal(patient);
         } 
         catch (Exception ex) 
         {
