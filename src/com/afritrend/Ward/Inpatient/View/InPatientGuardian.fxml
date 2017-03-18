@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="676.0" prefWidth="872.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.Ward.Inpatient.Controller.InPatientGuardianController">
+    <stylesheets>
+        <URL value="@/Resources/inpatient.css" />
+    </stylesheets>    
+    <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="GuardianTV" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="455.0" prefWidth="590.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </center>
+   <right>
+      <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Gurdian Details">
+            <content>
+              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity">
+                     <children>
+                        <TextField fx:id="txtGr_firstname" layoutX="12.0" layoutY="15.0" prefHeight="25.0" prefWidth="146.0" promptText="First Name" />
+                        <TextField fx:id="txtGr_Othernames" layoutX="13.0" layoutY="45.0" prefHeight="25.0" prefWidth="146.0" promptText="Other Names" />
+                        <TextField fx:id="txtGr_Lastname" layoutX="13.0" layoutY="74.0" prefHeight="25.0" prefWidth="146.0" promptText="Last Name" />
+                        <TextField fx:id="txtGr_RelationShipType" layoutX="13.0" layoutY="103.0" prefHeight="25.0" prefWidth="146.0" promptText="Relationship Type" />
+                        <Button layoutX="14.0" layoutY="139.0" mnemonicParsing="false" text="Save Guardian" />                        
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" right="10.0" top="10.0" />
+                     </padding></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </right>
+</BorderPane>

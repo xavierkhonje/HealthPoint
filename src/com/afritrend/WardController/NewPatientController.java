@@ -139,33 +139,9 @@ public class NewPatientController implements Initializable {
             patient.setImage("test");
             patient.setHospitalName("QECH");
             patient.setWardName(SessionManagement._wardName);
-            patient.setWardDptName("MEDICAL");
+            patient.setWardDptName("MEDICAL");           
             
-            GuardianModel guardian = new GuardianModel();
-            
-            guardian.setFirstname(txtGr_firstname.getText());
-            guardian.setOthernames(txtGr_Othernames.getText());
-            guardian.setLastname(txtGr_Lastname.getText());
-            guardian.setRelationshiptype(txtGr_RelationShipType.getText());
-            
-            String Flag = "WHITE";
-            
-            if(guardian.validateGuardian())
-            {
-                    txtGrFirstnameError.setText("");
-                    txtGrOtherNamesError.setText("");
-                    txtLastNameError.setText("");
-                    txtRelationShipType.setText("");  
-            }   
-            else
-            {
-                Flag = "RED";
-                
-                txtGrFirstnameError.setText(guardian.firstnameError);
-                txtGrOtherNamesError.setText(guardian.othernamesError);
-                txtLastNameError.setText(guardian.lastnameError);
-                txtRelationShipType.setText(guardian.relationshipTypeError);
-            }
+            String Flag = "WHITE";           
             
             if(patient.validatePatient())
             {               
@@ -206,7 +182,7 @@ public class NewPatientController implements Initializable {
             else
             {
                 PatientDataAcess patientdao = new PatientDataAcess();
-                String response = patientdao.PatientRegistration(patient,guardian);
+                String response = patientdao.PatientRegistration(patient);
 
                 lblGeneralError.setText(response);                       
             }

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="676.0" prefWidth="872.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.Ward.Inpatient.Controller.InPatientHistoryArchiveController">
+    <stylesheets>
+        <URL value="@/Resources/inpatient.css"/>
+    </stylesheets>       
+    <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="PrescriptionTV" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="455.0" prefWidth="590.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </center>
+   <right>
+      <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Prescription Details">
+            <content>
+              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity">
+                     <children>
+                        <Button fx:id="btnSave" layoutX="14.0" layoutY="579.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Add New" />
+                        <Button layoutX="110.0" layoutY="579.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Update" />
+                        <Label fx:id="lblFirstNameError" layoutX="14.0" layoutY="7.0" text="Patient Number" />
+                        <Label fx:id="lblMiddleNameError" layoutX="14.0" layoutY="195.0" text="Drug Name" />
+                        <Label fx:id="lblLastNameError" layoutX="14.0" layoutY="104.0" text="Dosage Form" />
+                        <Label fx:id="lblHomeTelError" layoutX="14.0" layoutY="150.0" text="Strength" />
+                        <Label fx:id="lblOfficeTelError" layoutX="15.0" layoutY="288.0" text="Quantity" />
+                        <TextField fx:id="txtQuantity" layoutX="14.0" layoutY="305.0" prefHeight="25.0" prefWidth="188.0" />
+                        <Label layoutX="14.0" layoutY="331.0" text="Instruction" />
+                        <TextField fx:id="txtInstruction" layoutX="14.0" layoutY="350.0" prefHeight="25.0" prefWidth="188.0" />
+                        <Label fx:id="lblEmailAddressError" layoutX="14.0" layoutY="380.0" text="Malangizo" />
+                        <TextField fx:id="txtMalangizo" layoutX="13.0" layoutY="397.0" prefHeight="25.0" prefWidth="188.0" />
+                        <Label fx:id="txtAdmissionError" layoutX="14.0" layoutY="471.0" text="Admission Codes" />
+                        <Label layoutX="14.0" layoutY="425.0" text="Px" />
+                        <TextField fx:id="txtPx" layoutX="14.0" layoutY="442.0" prefHeight="25.0" prefWidth="188.0" />
+                        <ComboBox fx:id="cbAdmission" layoutX="14.0" layoutY="489.0" prefHeight="25.0" prefWidth="188.0" promptText="Select Admission Code" />
+                        <ComboBox fx:id="cbDosageForm" layoutX="14.0" layoutY="121.0" prefHeight="25.0" prefWidth="188.0" promptText="Select Dosage Form" />
+                        <Button fx:id="btnDeletePrescription" layoutX="14.0" layoutY="607.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Delete" />
+                        <Button fx:id="SavePrescription" layoutX="110.0" layoutY="607.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Prescribe" />
+                        <Label layoutX="16.0" layoutY="241.0" text="cmscode" />
+                        <ComboBox fx:id="cbDrugClass" layoutX="13.0" layoutY="75.0" prefHeight="25.0" prefWidth="188.0" promptText="Select Drug Class" />
+                        <Label fx:id="pwdConfirmPasswordError" layoutX="14.0" layoutY="56.0" text="Drug Class" />
+                        <ComboBox fx:id="cbcmscode" layoutX="15.0" layoutY="259.0" prefHeight="25.0" prefWidth="189.0" promptText="Select CMSCode" />
+                        <Label layoutX="15.0" layoutY="519.0" text="Dosage Procedure" />
+                        <ComboBox fx:id="cbDosageProcedure" layoutX="15.0" layoutY="538.0" prefHeight="25.0" prefWidth="187.0" promptText="Dosage Procedure" />
+                        <ComboBox fx:id="cbStrength" editable="true" layoutX="15.0" layoutY="167.0" prefHeight="25.0" prefWidth="187.0" promptText="Select Strength" />
+                        <ComboBox fx:id="cbDrugName" editable="true" layoutX="15.0" layoutY="214.0" prefHeight="25.0" prefWidth="190.0" promptText="Select Drug" />
+                        <Label fx:id="lblPatientID" layoutX="13.0" layoutY="27.0" text="PatientNumber">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" right="10.0" top="10.0" />
+                     </padding></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </right>
+</BorderPane>
+
+
+

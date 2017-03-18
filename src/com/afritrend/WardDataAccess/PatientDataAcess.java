@@ -29,12 +29,12 @@ public class PatientDataAcess implements Ipatient{
     CallableStatement stmt = null;      
     
     @Override
-    public String PatientRegistration(patientModel patient, GuardianModel guardian) {
+    public String PatientRegistration(patientModel patient) {
         String msg = "";
         try
         {
             conn = config.DBConnect();            
-            String sql = "{CALL spHP_SavePatientDetails(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";    
+            String sql = "{CALL spHP_SavePatientDetails(?,?,?,?,?,?,?,?,?,?,?,?,?)}";    
             stmt = conn.prepareCall(sql);
             
             //preparing the image
@@ -55,15 +55,11 @@ public class PatientDataAcess implements Ipatient{
             stmt.setString(10, patient.getHospitalName());
             stmt.setString(11, patient.getWardName());
             stmt.setString(12, patient.getWardDptName());
-            stmt.setString(13, guardian.getFirstname());
-            stmt.setString(14, guardian.getOthernames());
-            stmt.setString(15, guardian.getLastname());
-            stmt.setString(16, guardian.getRelationshiptype());
-            stmt.registerOutParameter(17, java.sql.Types.NVARCHAR);
+            stmt.registerOutParameter(13, java.sql.Types.NVARCHAR);
             
             stmt.execute();
             
-            msg = stmt.getString(17);                   
+            msg = stmt.getString(13);                   
         }
         catch(Exception e)
         {

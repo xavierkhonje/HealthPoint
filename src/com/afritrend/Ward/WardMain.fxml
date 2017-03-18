@@ -42,11 +42,7 @@
                   </Menu>
                   <Menu mnemonicParsing="false" text="In-Patient">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Select In-Patient" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="In-Patient Prescription" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="In-Patient Administration" />
+                      <MenuItem fx:id="mnuPatientSelection" mnemonicParsing="false" onAction="#ShowPatientModule" text="Select In-Patient" />
                     </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Requisition">

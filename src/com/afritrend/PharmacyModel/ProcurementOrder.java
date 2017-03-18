@@ -12,17 +12,35 @@ import java.io.Serializable;
  * @author Xavier Khonje
  */
 public class ProcurementOrder implements Serializable{
+    private String itemclass;
     private String itemcode;
     private String description;
-    private int Quantity;
+    private int quantity;
+    private String scaleUnit;
 
+    public String itemclassError;
+    public String itemcodeError;
+    public String descriptionError;
+    public String quantityError;
+    public String scaleUnitError;
+    
     public ProcurementOrder() {
     }
 
-    public ProcurementOrder(String itemcode, String description, int Quantity) {
+    public ProcurementOrder(String itemclass, String itemcode, String description, int quantity, String scaleUnit) {
+        this.itemclass = itemclass;
         this.itemcode = itemcode;
         this.description = description;
-        this.Quantity = Quantity;
+        this.quantity = quantity;
+        this.scaleUnit = scaleUnit;
+    }
+
+    public String getItemclass() {
+        return itemclass;
+    }
+
+    public void setItemclass(String itemclass) {
+        this.itemclass = itemclass;
     }
 
     public String getItemcode() {
@@ -42,20 +60,62 @@ public class ProcurementOrder implements Serializable{
     }
 
     public int getQuantity() {
-        return Quantity;
+        return quantity;
     }
 
-    public void setQuantity(int Quantity) {
-        this.Quantity = Quantity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    @Override
-    public String toString() {
-        return "ProcurementOrder{" + "itemcode=" + itemcode + ", description=" + description + ", Quantity=" + Quantity + '}';
+    public String getScaleUnit() {
+        return scaleUnit;
     }
 
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone(); //To change body of generated methods, choose Tools | Templates.
+    public void setScaleUnit(String scaleUnit) {
+        this.scaleUnit = scaleUnit;
     }
+
+    public boolean validateProcurement()
+    {
+        String Flag = "WHITE";
+        
+        if(this.itemclass.equals("")||this.itemclass == null)
+        {
+            Flag = "RED";
+            this.itemclassError = "Please Select Class";
+        }
+        
+        if(this.itemcode.equals("")||this.itemcode == null)
+        {
+            Flag = "RED";
+            this.itemcodeError = "Please Select Code";
+        }
+        
+        if(this.description.equals("")||this.description == null)
+        {
+            Flag = "RED";
+            this.descriptionError = "Please Supply Description";
+        }
+        
+        if(this.quantity == 0)
+        {
+            Flag = "RED";
+            this.quantityError = "Please Supply Quantity";
+        }
+        
+        if(this.scaleUnit.equals("")||this.scaleUnit == null)
+        {
+            Flag = "RED";
+            this.scaleUnitError = "Please Supply Scale Unit";
+        }
+        
+        if(Flag.equals("RED"))
+        {
+            return false;
+        }
+        return true;
+    }
+
+
+
 }

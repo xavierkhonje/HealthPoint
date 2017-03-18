@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="676.0" prefWidth="872.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.Ward.Inpatient.Controller.InPatientToTakeHomeController">
+    <stylesheets>
+        <URL value="@/Resources/inpatient.css" />
+    </stylesheets>       
+    <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="ToTakeHomeTV" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="455.0" prefWidth="590.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </center>
+   <right>
+      <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Prescription Details">
+            <content>
+              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity">
+                     <children>
+                        <Button fx:id="btnSave" layoutX="14.0" layoutY="566.0" mnemonicParsing="false" onAction="#AddNewToTakeHome" prefHeight="25.0" prefWidth="92.0" text="Add New" />
+                        <Button layoutX="110.0" layoutY="566.0" mnemonicParsing="false" onAction="#UpdateToTakeHome" prefHeight="25.0" prefWidth="92.0" text="Update" />
+                        <Label fx:id="lblFirstNameError" layoutX="14.0" layoutY="7.0" text="Patient Number" />
+                        <Label fx:id="lblMiddleNameError" layoutX="14.0" layoutY="151.0" text="Drug Name" />
+                        <Label fx:id="lblLastNameError" layoutX="14.0" layoutY="104.0" text="Dosage Form" />
+                        <Label fx:id="lblOfficeTelError" layoutX="15.0" layoutY="199.0" text="Quantity" />
+                        <TextField fx:id="txtQuantity" layoutX="14.0" layoutY="216.0" prefHeight="25.0" prefWidth="188.0" />
+                        <Label layoutX="14.0" layoutY="242.0" text="Instruction" />
+                        <TextField fx:id="txtInstruction" layoutX="14.0" layoutY="261.0" prefHeight="25.0" prefWidth="188.0" />
+                        <Label fx:id="lblEmailAddressError" layoutX="14.0" layoutY="291.0" text="Malangizo" />
+                        <TextField fx:id="txtMalangizo" layoutX="13.0" layoutY="308.0" prefHeight="25.0" prefWidth="188.0" />
+                        <Label fx:id="txtAdmissionError" layoutX="14.0" layoutY="458.0" text="Admission Codes" />
+                        <Label layoutX="14.0" layoutY="336.0" text="Px" />
+                        <TextField fx:id="txtPx" layoutX="14.0" layoutY="353.0" prefHeight="25.0" prefWidth="188.0" />
+                        <ComboBox fx:id="cbAdmission" layoutX="14.0" layoutY="476.0" prefHeight="25.0" prefWidth="188.0" promptText="Select Admission Code" />
+                        <ComboBox fx:id="cbDosageForm" layoutX="14.0" layoutY="121.0" prefHeight="25.0" prefWidth="188.0" promptText="Select Dosage Form" />
+                        <Button fx:id="btnDeletePrescription" layoutX="14.0" layoutY="594.0" mnemonicParsing="false" onAction="#DeleteToTakeHome" prefHeight="25.0" prefWidth="92.0" text="Delete" />
+                        <Button fx:id="SavePrescription" layoutX="110.0" layoutY="594.0" mnemonicParsing="false" onAction="#SaveTotakeHome" prefHeight="25.0" prefWidth="92.0" text="Save" />
+                        <ComboBox fx:id="cbDrugClass" layoutX="13.0" layoutY="75.0" prefHeight="25.0" prefWidth="188.0" promptText="Select Drug Class" />
+                        <Label fx:id="pwdConfirmPasswordError" layoutX="14.0" layoutY="56.0" text="Drug Class" />
+                        <Label layoutX="15.0" layoutY="506.0" text="Dosage Procedure" />
+                        <ComboBox fx:id="cbDosageProcedure" layoutX="15.0" layoutY="525.0" prefHeight="25.0" prefWidth="187.0" promptText="Dosage Procedure" />
+                        <ComboBox fx:id="cbDrugName" editable="true" layoutX="15.0" layoutY="170.0" prefHeight="25.0" prefWidth="190.0" promptText="Select Drug" />
+                        <Label fx:id="lblPatientID" layoutX="13.0" layoutY="27.0" text="PatientNumber">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMidNightAmount" layoutX="15.0" layoutY="405.0" prefHeight="25.0" prefWidth="34.0" />
+                        <TextField fx:id="txtEveningAmount" layoutX="167.0" layoutY="405.0" prefHeight="25.0" prefWidth="35.0" />
+                        <TextField fx:id="txtMorningAmount" layoutX="61.0" layoutY="405.0" prefHeight="25.0" prefWidth="36.0" />
+                        <TextField fx:id="txtNoonAmount" layoutX="115.0" layoutY="405.0" prefHeight="25.0" prefWidth="38.0" />
+                        <Label layoutX="14.0" layoutY="385.0" text="Capsule/Tablets Per Day" />
+                        <Label layoutX="18.0" layoutY="431.0" text="Mid">
+                           <font>
+                              <Font name="System Italic" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="65.0" layoutY="429.0" text="Morn">
+                           <font>
+                              <Font name="System Italic" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="120.0" layoutY="429.0" text="Noon">
+                           <font>
+                              <Font name="System Italic" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="175.0" layoutY="431.0" text="Eve">
+                           <font>
+                              <Font name="System Italic" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" right="10.0" top="10.0" />
+                     </padding></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </right>
+</BorderPane>

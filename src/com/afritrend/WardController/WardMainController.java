@@ -352,4 +352,18 @@ public class WardMainController implements Initializable {
         }
     }
     
+    @FXML
+    private void ShowPatientModule(ActionEvent event)
+    {
+        try
+        {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/afritrend/Ward/InPatientDashboard.fxml"));
+            MainBorderPane.setCenter(root);
+        }
+        catch(Exception e)            
+        {
+            
+        }           
+    }
+    
 }

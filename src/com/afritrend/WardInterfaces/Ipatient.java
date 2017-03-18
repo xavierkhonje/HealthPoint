@@ -15,6 +15,6 @@ import java.util.List;
  * @author Xavier Khonje
  */
 public interface Ipatient {
-    String PatientRegistration(patientModel patient, GuardianModel guardian);
+    String PatientRegistration(patientModel patient);
     List<patientModel> GetPatients(String firstname, String Othernames, String Lastname, String PatientID);
 }
