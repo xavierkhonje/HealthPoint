@@ -14,7 +14,7 @@
         <URL value="@/Resources/patientmain.css" />
     </stylesheets>       
     <children>
-      <AnchorPane prefHeight="122.0" prefWidth="1178.0" VBox.vgrow="ALWAYS">
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="87.0" prefWidth="1178.0" VBox.vgrow="ALWAYS">
          <children>
             <Label layoutX="29.0" layoutY="53.0" text="Other Name :" />
             <Label layoutX="29.0" layoutY="81.0" text="Last Name :" />
@@ -23,10 +23,10 @@
             <Label layoutX="538.0" layoutY="103.0" text="Address 2 :" />
             <Label layoutX="29.0" layoutY="21.0" text="FirstName" />
             <Label layoutX="29.0" layoutY="139.0" text="Cell Number" />
-            <Button layoutX="31.0" layoutY="373.0" mnemonicParsing="false" onAction="#SavePatient" text="Save Patient" />
-            <Button layoutX="121.0" layoutY="373.0" mnemonicParsing="false" text="Guradian Details" />
-            <Separator layoutX="8.0" layoutY="368.0" prefWidth="200.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="-8.0" />
-            <Separator layoutX="8.0" layoutY="400.0" prefWidth="200.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="-8.0" />
+            <Button layoutX="31.0" layoutY="208.0" mnemonicParsing="false" onAction="#SavePatient" text="Save Patient" />
+            <Button layoutX="121.0" layoutY="208.0" mnemonicParsing="false" text="Guradian Details" />
+            <Separator layoutX="8.0" layoutY="203.0" prefWidth="200.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="-8.0" />
+            <Separator layoutX="8.0" layoutY="235.0" prefWidth="200.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="-8.0" />
             <Label fx:id="lblGeneralError" layoutX="398.0" layoutY="206.0" prefHeight="17.0" prefWidth="409.0" />
             <Label fx:id="fnameError" layoutX="382.0" layoutY="21.0" prefHeight="17.0" prefWidth="139.0" textFill="#dd0606" />
             <Label fx:id="OtherNamesError" layoutX="382.0" layoutY="51.0" prefHeight="17.0" prefWidth="139.0" textFill="#eb0d0d" />
@@ -43,8 +43,11 @@
             <TextArea fx:id="txtAddress1" layoutX="611.0" layoutY="17.0" prefHeight="72.0" prefWidth="184.0" />
             <TextArea fx:id="txtAddress2" layoutX="611.0" layoutY="105.0" prefHeight="86.0" prefWidth="184.0" />
             <ImageView fx:id="imageimg" fitHeight="162.0" fitWidth="173.0" layoutX="988.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+            <ComboBox fx:id="cbPaymentMethod" layoutX="644.0" layoutY="208.0" onAction="#ProcessPaymentDetails" prefWidth="150.0" promptText="Payment Method" />
+            <Button fx:id="btnShowPatient" layoutX="397.0" layoutY="208.0" mnemonicParsing="false" onAction="#GetAllPatients" text="Show Patients" />
+            <TextField fx:id="txtPatientNumber" layoutX="242.0" layoutY="208.0" promptText="Patient Number" />
          </children>
       </AnchorPane>
-      <TableView fx:id="TVDrugEntry" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="293.0" prefWidth="1178.0" VBox.vgrow="ALWAYS" />
+      <TableView fx:id="TVPatient" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="463.0" prefWidth="1178.0" VBox.vgrow="ALWAYS" />
    </children>
 </VBox>
